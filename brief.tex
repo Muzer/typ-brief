@@ -1,10 +1,47 @@
 \documentclass[a4paper,12pt]{article}
 \usepackage[margin=1.0in]{geometry}
-\title{Third Year Project brief}
-\author{Murray Colpman}
+\title{A real time train information and prediction system for the London Underground --- project brief}
+\author{Murray Colpman --- Supervisor: Nick Gibbins}
 \begin{document}
 \maketitle
 
-\section*{Third year project brief}
+\section*{Problem}
+
+Although the London Underground has an information system, there is currently
+no publicly-available software to track individual trains through the system,
+nor is there a way to view the timetable (both planned and predicted) from each
+station more than a few trains in advance. This is possible on the National
+Rail network using various sites using Network Rail's open data, but such a
+thing has not been attempted for the London Underground yet.
+
+Such a tracking system would not only be useful for rail enthusiasts, for
+example trying to follow a delayed steam service around the network or to
+follow a particular train of interest, but would also be very useful for making
+a variety of inferences about the network.
+
+The project does not come without its difficulties, however. The main source of
+data is from a service called TrackerNet, but this data is cached for up to
+thirty seconds in the spec (in practice a little longer) to prevent flooding
+the (internally-important) system. The main accurate source of location in this
+is the logical signalling block in which the train is located (called a track
+code on the London Underground). However, there is no map of where these track
+codes are in reality, and Transport for London have proven uncooperative in the
+task of providing one. Finally, there is, as far as I can tell from preliminary
+investigations, no common identifier between the timetable data and the live
+data.
+
+\section*{Goals}
+
+\begin{itemize}
+  \item To produce a software system to track trains throughout the London
+    Underground System and store the results of past days
+  \item To infer the working timetable for this data by averaging past runs and
+    manually test a sample of this for accuracy against a PDF working timetable
+  \item To produce a user interface for viewing this data per-station or
+    per-train
+  \item To expand the system to predict the future arrival and departure times
+    of trains, including when forming new services
+  \item To produce a map of track codes
+\end{itemize}
 
 \end{document}
