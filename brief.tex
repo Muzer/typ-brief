@@ -1,5 +1,5 @@
 \documentclass[a4paper,12pt]{article}
-\usepackage[margin=1.0in]{geometry}
+\usepackage[margin=0.8in]{geometry}
 \usepackage{titling}
 \title{A real time train information and prediction system for the London Underground --- project brief}
 \author{Murray Colpman --- Supervisor: Nick Gibbins}
@@ -21,32 +21,33 @@ follow a particular train of interest, but would also be very useful for making
 a variety of inferences about the network.
 
 The project does not come without its difficulties, however. The main source of
-data is from a service called TrackerNet, but this data is cached for up to
-thirty seconds in the spec (in practice a little longer) to prevent flooding
-the (internally-important) system. The main accurate source of location in this
-is the logical signalling block in which the train is located (called a track
-code on the London Underground). However, there is no map of where these track
-codes are in reality. Finally, there appears to be no common identifier between
-the timetable data and the live data.
+data is from a service called TrackerNet, but this data is cached for around
+thirty seconds to prevent flooding. The main accurate source of location is the
+signalling block in which the train is located (the track code).  However,
+there is no map of where these track codes are in reality. Finally, there
+appears to be no common identifier between the timetable data and the live
+data.
 
 \section*{Goals and scope}
 
 \begin{enumerate}
   \item To produce a software system to track trains throughout the London
     Underground System and store the results of past days
-  \item To infer the working timetable for this data by averaging past runs and
-    manually test a sample of this for accuracy against a PDF working timetable
+  \item To infer the working timetable for this data by averaging past runs
   \item To produce a user interface for viewing this data per-station or
     per-train
   \item To expand the system to predict the future arrival and departure times
     of trains, including when forming new services
-  \item To produce a topological map of track codes and (if possible) attempt
-    to verify its accuracy in some way, and to use this map to further improve
-    the predictions
+  \item To produce a topological map of track codes, and to use this map to
+    further improve the predictions
 \end{enumerate}
 
-The scope of the main project is goals 1-3. Goals 4 and 5 are stretch goals, in
-case the main project is completed sooner than expected as additional tasks to
-increase the usefulness of the system.
+The main project comprises goals 1-3. Goals 4 and 5 are stretch goals.
+Evaluation of the main project can be performed by testing a sample of the
+produced timetable manually against the PDF and seeing how well they match.
+Evaluation of goal 4 involves seeing how well the predictions match subsequent
+reality. Evaluation of goal 5 is more difficult --- if a portion of a track
+code map cannot be obtained, checking the map to ensure that at least the track
+layout matches reality would be a reasonable evaluation step.
 
 \end{document}
